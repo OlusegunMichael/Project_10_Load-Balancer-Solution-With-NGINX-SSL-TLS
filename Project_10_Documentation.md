@@ -57,7 +57,29 @@ Using the *`sudo vi /etc/nginx/nginx.conf`* command to acces the nginx config fi
 >#### Accessing the Web Server
 To verify that our configuration done  works I access the Web Server from a browswer using the new Domain name; http://www.olusegundevopsproject.click
 
-
+![dns](./Project_10_Images/www.PNG
+)
 ### **Step-3 Configure secured connection using SSL/TLS certificates**
 ____
 >#### Install certbot and request for an SSL/TLS certificate
+* *`sudo systemctl status snapd`*
+* *`sudo snap install --classic certbot`*
+* *`sudo ln -s /snap/bin/certbot /usr/bin/certbot`*
+* *`Sudo certbot --nginx`*
+
+![certbot](./Project_10_Images/certbot.PNG)
+![certbot](./Project_10_Images/certbot1.PNG)
+![certbot](./Project_10_Images/certbot2.PNG)
+
+>#### Accessing the Web Server using https
+To verify that our cerbot configuration done  works I access the Web Server from a browswer adding https to the new Domain name; https://www.olusegundevopsproject.click
+
+![https](./Project_10_Images/https.PNG)
+![https](./Project_10_Images/https1.PNG)
+
+>#### Set up periodical renewal of your SSL/TLS certificate
+* *`sudo certbot renew --dry-run`*
+* *`crontab -e`*
+
+![https](./Project_10_Images/dryrun.PNG)
+
